@@ -43,7 +43,7 @@ async function handleRequest(request) {
 	const providerResponse = await fetch(weatherUrl);
 	const processedResults = await processResponse(providerResponse);
 
-	return new Response(processedResults, {
+	return new Response(processedResults + "\n", {
 		status: 200,
 		headers: headers
 	});
